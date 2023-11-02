@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net472</TargetFramework>
+		<Configurations>Release;Debug</Configurations>
+		<AssemblyName>$(MSBuildProjectName)-Workshop</AssemblyName>
+		<LangVersion>latest</LangVersion>
+		<NoWarn>CS0114</NoWarn>
+		<RootNamespace>ChefPlusPlus</RootNamespace>
+	</PropertyGroup>
+	
+	<PropertyGroup>
+		<AssetBundlePath>$(ProjectDir)UnityProject\content\mod.assets</AssetBundlePath>
+		<EnableAutoPDB>true</EnableAutoPDB>
+	</PropertyGroup>
+	
+	<ItemGroup>
+	  <Compile Remove="content\**" />
+	  <Compile Remove="UnityProject\**" />
+	  <EmbeddedResource Remove="content\**" />
+	  <EmbeddedResource Remove="UnityProject\**" />
+	  <None Remove="UnityProject\**" />
+	</ItemGroup>
+  
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0-rc.2.23479.6" />
+		<PackageReference Include="Yariazen.PlateUp.ModBuildUtilities" Version="1.10.22" />
+	</ItemGroup>
+</Project>

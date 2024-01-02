@@ -25,9 +25,9 @@ namespace ChefPlusPlus
         public const string MOD_GUID = "com.starfluxgames.chefplusplus";
         public const string MOD_NAME = "Chef PlusPlus";
         public const string MOD_VERSION = "0.1.0";
-        public const string MOD_BETA_VERSION = "6";
+        public const string MOD_BETA_VERSION = "7";
         public const string MOD_AUTHOR = "StarFluxGames";
-        public const string MOD_GAMEVERSION = ">=1.1.7";
+        public const string MOD_GAMEVERSION = ">=1.1.8";
 
         public static PreferenceManager manager;
         public static PreferenceManager tokenManager;
@@ -98,13 +98,8 @@ namespace ChefPlusPlus
                 {
                     _pubSub.ListenToFollows(TwitchAuth.GetUser());
                     _pubSub.ListenToBitsEventsV2(TwitchAuth.GetUser());
-                    // _pubSub.ListenToCommerce(TwitchAuth.GetUser());
-                    // _pubSub.ListenToVideoPlayback(TwitchAuth.GetUser());
-                    // _pubSub.ListenToWhispers(TwitchAuth.GetUser());
                     _pubSub.ListenToChannelPoints(TwitchAuth.GetUser());
-                    // _pubSub.ListenToLeaderboards(TwitchAuth.GetUser());
                     _pubSub.ListenToSubscriptions(TwitchAuth.GetUser());
-                    // _pubSub.ListenToPredictions(TwitchAuth.GetUser());
                 };
 
                 _pubSub.OnChannelPointsRewardRedeemed += (sender, e) => { Loader.triggers[EffectTrigger.OnChannelPointsRewardRedeemed].OnRun(sender, e); };
